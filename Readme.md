@@ -21,6 +21,7 @@ I suppose that you want to want to see your server in the STK Server Browser, so
 | stk_aikarts | **Optional** Sets the number of AI karts on this server|
 
 ## Troubleshooting
-- Sometimes the server just doesn't start when you try it the first time, but exits instantly. In this case you just have to stop the Docker container and start it after a few seconds. I would be glad if somebody could help me finding the error for this.
+- If you restart the Docker container, the server will not start correctly because the restart is faster than the Supertuxkart servers. So you just have to stop the container, wait a few seconds and start it again.
+- It seems like the server simply stops working after a few days, because the session is invalid. In this case you have to restart the container.
 ## Thanks to 
 [OpenHS](https://github.com/openhs/docker-supertuxkart-server) for his great base Dockerfile that I extended a bit.
