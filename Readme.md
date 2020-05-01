@@ -25,6 +25,7 @@ Attention: **You need to SuperTuxKart online accounts if you want to run this se
 
 ## Ports
 You don't need to open any port to make this server running because it makes use of STKs own stun techniques. If you want to connect directly to the server over LAN you can open the port 2759. 
+
 ## Troubleshooting
 - When you restart the server/container, you have to wait about 10 seconds. Otherwise the SuperTuxKart online servers are still thinking that the server exists and the new session cannot be started.
 ## Thanks to 
