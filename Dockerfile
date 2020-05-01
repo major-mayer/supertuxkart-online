@@ -11,11 +11,10 @@ FROM debian:10 AS base
 
 
 
-MAINTAINER openhs
-LABEL version = "0.0.1" \
-      description = "SuperTuxKart server"
-
-
+LABEL version="0.0.1" \
+      description="SuperTuxKart server with integrated bots" \
+      maintainer="steasenburger"
+    
 
 RUN apt-get update
 

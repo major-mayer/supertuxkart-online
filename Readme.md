@@ -12,15 +12,20 @@ Note: It is very important that the server config file is owned by the stk user,
 
 ## Environment variables
 I suppose that you want to want to see your server in the STK Server Browser, so the container needs your account details to be able to register the new server.
+Attention: **You need to SuperTuxKart online accounts if you want to run this server with the AI karts/ bots enabled!** Otherwise the server always stops working after about one day, because the session becomes invalid. I think that's the case, because the bots also use the same account as the server.
 
 | Key          | Value                                                                                                                                |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| stk_user     | Your SuperTuxKart online username                                                                                                    |
-| stk_pw       | Your SuperTuxKart online password                                                                                                    |
+| stk_user     | Your SuperTuxKart online username for the server                                                                                             |
+| stk_pw       | Your SuperTuxKart online password for the server                                                                                                   |
 | stk_serverpw | **Optional** If you have set a server password in the server_config.xml the script needs to know it to be able to connect with the AI karts to it |
 | stk_aikarts | **Optional** Sets the number of AI karts on this server|
+| stk_aiuser | **Optional** SuperTuxKart online username for the AI karts|
+| stk_aipw | **Optional** SuperTuxKart online password for the AI karts|
 
+## Ports
+You don't need to open any port to make this server running because it makes use of STKs own stun techniques. If you want to connect directly to the server over LAN you can open the port 2759. 
 ## Troubleshooting
-- Sometimes the server just doesn't start when you try it the first time, but exits instantly. In this case you just have to stop the Docker container and start it after a few seconds. I would be glad if somebody could help me finding the error for this.
+- When you restart the server/container, you have to wait about 10 seconds. Otherwise the SuperTuxKart online servers are still thinking that the server exists and the new session cannot be started.
 ## Thanks to 
 [OpenHS](https://github.com/openhs/docker-supertuxkart-server) for his great base Dockerfile that I extended a bit.
