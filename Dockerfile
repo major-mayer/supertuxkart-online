@@ -12,9 +12,9 @@ FROM debian:10 AS base
 
 
 LABEL version="0.0.1" \
-      description="SuperTuxKart server with integrated bots" \
-      maintainer="steasenburger"
-    
+    description="SuperTuxKart server with integrated bots" \
+    maintainer="steasenburger"
+
 
 RUN apt-get update
 
@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     build-essential cmake pkg-config zlib1g-dev libssl-dev libcurl4-openssl-dev libenet-dev git subversion \
     ca-certificates
 
-RUN git clone -b 1.1 --depth 1 https://github.com/supertuxkart/stk-code.git
+RUN git clone -b 1.2 --depth 1 https://github.com/supertuxkart/stk-code.git
 RUN svn co https://svn.code.sf.net/p/supertuxkart/code/stk-assets stk-assets
 #COPY stk-code stk-code
 #COPY stk-assets stk-assets
@@ -51,7 +51,8 @@ RUN useradd --shell /bin/false --create-home stk
 
 RUN mkdir -p /home/stk/.config/supertuxkart/config-0.10/ && chown -R stk:stk /home/stk/.config
 
-EXPOSE 2759/udp
+EXPOSE 2759
+EXPOSE 2757
 
 USER stk
 

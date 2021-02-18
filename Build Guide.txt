@@ -1,0 +1,2 @@
+docker build -t 192.168.0.81:5000/supertuxkart-online ./
+docker push 192.168.0.81:5000/supertuxkart-online:latest  
