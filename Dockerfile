@@ -7,7 +7,7 @@
 
 
 
-FROM debian:10 AS base
+FROM debian:11 AS base
 
 
 
@@ -31,7 +31,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     build-essential cmake pkg-config zlib1g-dev libssl-dev libcurl4-openssl-dev libenet-dev git subversion \
     ca-certificates
 
-RUN git clone -b 1.2 --depth 1 https://github.com/supertuxkart/stk-code.git
+RUN git clone -b 1.3 --depth 1 https://github.com/supertuxkart/stk-code.git
 RUN svn co https://svn.code.sf.net/p/supertuxkart/code/stk-assets stk-assets
 #COPY stk-code stk-code
 #COPY stk-assets stk-assets
